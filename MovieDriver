@@ -1,0 +1,64 @@
+package lab_1;
+import java.util.Scanner;
+
+public class MovieDriver {
+	
+	public static void main(String[] args ) {
+		
+    //Create a new object of type Scanner that reads from the keyboard
+    Scanner in = new Scanner(System.in);
+	
+	char anotherMovieOption = 'y';
+	
+	//loop that iterates if user wished to enter another movie
+	do {
+	
+	
+	//Create a new movie object
+	Movie movie = new Movie();
+	
+	//Prompt the user to enter the title of a movie 
+	System.out.print("Enter the movie name: ");
+	
+	//Read in the line that the user types
+	String movieName = in.nextLine();
+	
+	//Set the title in the movie object
+	movie.setTitle(movieName);
+	
+	//Prompt the user to enter the movie’s rating
+	System.out.print("Enter the rating of the movie: ");
+	
+	//Read in the line that the user types
+	String movieRating = in.nextLine();
+	
+	//Set the rating in the movie object
+	movie.setRating(movieRating); 
+	
+	//Prompt the user to enter the number of tickets sold at a (unnamed) theater
+	System.out.print("Enter the number of tickets sold for this movie: ");
+	
+	//Read in the integer that the user types
+	int numTicketsSold = in.nextInt();
+	
+	//Set the number of tickets sold in the movie object
+	movie.setSoldTickets(numTicketsSold);
+	
+	//Print out the information using the movie’s toString method
+	System.out.print(movie.toString());
+	
+	//prompt user to enter y or no to enter another movie
+	System.out.print("\nDo you want to enter another (y or n): ");
+	anotherMovieOption = in.next().charAt(0);
+	
+	in.nextLine();
+	
+	}while(anotherMovieOption == 'y'|| anotherMovieOption == 'Y');
+	
+	
+	System.out.print("\nGoodBye");
+
+	in.close();
+	
+	}
+}
